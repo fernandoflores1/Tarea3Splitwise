@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang=es>
+
+<head>
+  <meta charset=UTF-8>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel=stylesheet href=./src/css/style.css>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src=./src/js/index.js defer></script>
+  <title>Ejemplos clase</title>
+</head>
+
+<body>
+  <main>
+
+    <!--HOME MENU-->
+    <div id="home" class="page active">
+      <div>
+        <img src="./src/images/dragonBallTitulo.png" alt="">
+      </div>
+      <h2>Home</h2>
+      <button class="addExpense" onclick="displayPage('add-expense')">+</button>
+      <div class="home-menu">
+
+      </div>
+
+      <div class="buttons">
+        <button onclick="displayPage('users')">Users</button>
+        <button onclick="displayPage('balances')">Balances</button>
+      </div>
+    </div>
+
+
+    <!--USER LIST-->
+    <div id="users" class="page">
+      <div>
+        <img src="./src/images/dragonBallTitulo.png" alt="">
+      </div>
+      <h2>Users</h2>
+
+      <div id="userList">
+
+      </div>
+
+      <div class="buttons">
+        <button onclick="displayPage('home')">Home</button>
+        <button onclick="displayPage('add-user')">Add user</button>
+      </div>
+
+    </div>
+
+
+    <!--ADD USER-->
+    <div id="add-user" class="page">
+      <div>
+        <img src="./src/images/dragonBallTitulo.png" alt="">
+      </div>
+      <h2>Add an user</h2>
+      <form id="myForm">
+        <div class="column">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="username" />
+        </div>
+        <div class="column">
+          <label>Genre</label>
+          <div class="row">
+            <input type="radio" id="female" name="genre" value="female" />
+            <label for="female">Female <img src="./src/images/simboloFemenino.png" alt="Female symbol"></label>
+          </div>
+          <div class="row">
+            <input type="radio" id="male" name="genre" value="male" checked />
+            <label for="male">Male <img src="./src/images/simboloMasculino.jpg" alt="Male symbol"></label>
+          </div>
+        </div>
+
+        <div class="column">
+          <p>Icon</p>
+          <div class="icons">
+            <input type="radio" name="icon" id="broly" value="broly">
+            <label for="broly">
+              <img src="./src/images/broly.png" alt="broly">
+            </label>
+
+            <input type="radio" name="icon" id="gogeta" value="gogeta">
+            <label for="gogeta">
+              <img src="./src/images/gogeta.png" alt="gogeta">
+            </label>
+
+            <input type="radio" name="icon" id="goku" value="goku" checked>
+            <label for="goku">
+              <img src="./src/images/gokuUI.png" alt="goku ultra instinto dominado">
+            </label>
+
+            <input type="radio" name="icon" id="vegeto" value="vegeto">
+            <label for="vegeto">
+              <img src="./src/images/vegeto.png" alt="vegeto">
+            </label>
+
+            <input type="radio" name="icon" id="vados" value="vados">
+            <label for="vados">
+              <img src="./src/images/vados.png" alt="vados">
+            </label>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button type="button" onclick="displayPage('users')">Back</button>
+          <button id="submitAddUser" type="submit" onclick="displayPage('users')">Submit</button>
+        </div>
+      </form>
+    </div>
+
+
+    <!--ADD EXPENSE-->
+    <div id="add-expense" class="page">
+      <div>
+        <img src="./src/images/dragonBallTitulo.png" alt="bola dragón 1 estrella">
+      </div>
+      <h2>Add an expense</h2>
+
+      <div class="top">
+        <form id="add-expense-form">
+          <div class="row">
+            <img src="./src/images/bola1estrella.png" alt="dragon ball star 1">
+            <div>
+              <label for="users">User</label>
+              <select name="users" id="usersExpense">
+                <option value="0" selected disabled>Select an option</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <img src="./src/images/bola1estrella.png" alt="dragon ball star 1">
+            <div>
+              <label for="name-expense">Amount</label>
+              <input type="text" name="amount" id="amount-expense">
+            </div>
+          </div>
+
+          <div class="row">
+            <img src="./src/images/bola1estrella.png" alt="dragon ball star 1">
+            <div>
+              <label for="name-expense">Title</label>
+              <input type="text" name="title" id="title-expense">
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="buttons">
+        <button onclick="displayPage('home')">Back</button>
+        <button id="confirm-expense" onclick="displayPage('home')">Confirm</button>
+      </div>
+    </div>
+
+
+
+    <!--BALANCES-->
+    <div id="balances" class="page">
+      <div>
+        <img src="./src/images/dragonBallTitulo.png" alt="">
+      </div>
+      <h2>Balances</h2>
+
+      <div class="usersBalances">
+
+      </div>
+
+      <div class="buttons">
+        <button onclick="displayPage('home')">Home</button>
+        <button class="settleUp" onclick="settleUp()">Settle up</button>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>
